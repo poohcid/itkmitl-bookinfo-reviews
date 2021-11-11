@@ -19,23 +19,8 @@ spec:
       - name: {{ .Release.Name }}
         image: {{ .Values.reviews.image }}:{{ .Values.reviews.tag }}
         imagePullPolicy: Always
-        ports:
-        - containerPort: {{ .Values.reviews.port }}
-          name: web-port
-          protocol: TCP
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: {{ .Values.reviews.port }}
-            scheme: HTTP
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: {{ .Values.reviews.port }}
-            scheme: HTTP
         {{- if or (.Values.extraEnv) (.Values.extraEnvSecret) }}
         env:
-
         {{- if .Values.extraEnv }}
         {{- range $key, $value := .Values.extraEnv }}
         - name: {{ $key }}
