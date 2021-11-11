@@ -16,4 +16,4 @@ ingress:
 extraEnv:
   SERVICE_VERSION: v1
   ENABLE_RATINGS: "true"
-  RATINGS_SERVICE: "http://bookinfo-uat-ratings:8080"
+  RATINGS_SERVICE: http://bookinfo-uat-ratings:8080
