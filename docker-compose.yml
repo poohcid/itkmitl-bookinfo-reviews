@@ -1,6 +1,6 @@
 services:
   reviews:
     build: .
-    image: ghcr.io/poohcid/bookinfo-reviews:uat
+    image: ghcr.io/poohcid/bookinfo-reviews:prd
     ports:
       - "8082:9080"
